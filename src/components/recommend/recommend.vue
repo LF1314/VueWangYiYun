@@ -221,7 +221,7 @@ export default {
     width: 100%;
     position: absolute;
     top: 92px;
-    height: 575px;
+    bottom: 0;
     overflow: hidden;
 }
 //推荐新曲

@@ -29,7 +29,15 @@ export default new Router({
       //排行路由
       path:"/rank",
       name:'rank',
-      component:()=>import ('@/components/rank/rank')
+      component:()=>import ('@/components/rank/rank'),
+      children:[
+             {
+               path:'/rank/:id',
+               name:'ranklist',
+               meta:'排行',
+               component:musiclist
+             }
+      ]
 
     },
     {

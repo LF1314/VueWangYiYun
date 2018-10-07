@@ -3,10 +3,13 @@ import vuex from 'vuex'
 import createPersistedState from 'vuex-persistedstate'
 
 Vue.use(vuex)
-
 const state = {
     songlist:[],
-    musiclist:[]
+    musiclist:[],
+    // 当前播放音乐的信息
+    plaingsong:{},
+    //存取排行所有信息
+    ranklist:[]
 }
 
 const store = new vuex.Store({
@@ -17,6 +20,13 @@ const store = new vuex.Store({
       }  ,
       'SETMUSICLIST'(state,uploade){
           state.musiclist = uploade
+      },
+      'SETSONG'(state,uploade){
+          state.plaingsong = uploade
+      }
+      ,
+      'SETRANKLIST'(state,uploade){
+        state.ranklist = uploade
       }
     },
     plugins: [

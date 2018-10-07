@@ -31,7 +31,7 @@
                             <span>(共{{musiclist.playlist.tracks.length}}首)</span>
                         </div>
                        <ul>
-                           <li class="musicitem" v-for="(song,index) in musiclist.playlist.tracks" :key="index" @click="jumplay(song.id)">
+                           <li class="musicitem" v-for="(song,index) in musiclist.playlist.tracks" :key="index" @click="jumplay(song)">
                                <div class="musicindex">
                                    {{index+1}}
                                </div>
@@ -51,6 +51,7 @@
 </template>
 <script>
  import BScroll from 'better-scroll'
+ import Vue from 'vue'
 export default {
     name:'musiclist',
     data(){
@@ -75,11 +76,33 @@ export default {
               return this.a    
         }
     },
+      created(){
+        this.musicid = this.$route.params.id
+        this.name = this.$route.name
+        this.historypath = this.$route.matched[0].path
+        this.meta = this.$route.meta
+        this.getidfmessage()
+        // console.log(this.$route)
+        this.$nextTick(()=>{
+            this._scrollcon()
+        })
+        
+    },
     methods:{
         //播放音乐
-        jumplay(id){
-           this.$axios.get('/api/music/url',{id}).then(res=>{
-               console.log(res)
+        jumplay(song){
+            this.$store.commit('SETMUSICLIST',[])
+            this.$store.commit('SETSONG',{})
+            let obj = {}
+            obj.id = song.id
+            obj.title = song.name
+            obj.artist = song.ar[0].name
+            obj.pic = song.al.picUrl
+           this.$axios.get('/api/music/url',{id:song.id}).then(res=>{
+               obj.src = res.data.data[0].url
+            //    console.log(obj)
+               this.$store.commit('SETSONG',obj)
+            
            })
         },
         //返回上一级路由
@@ -95,38 +118,44 @@ export default {
        },
         //获取歌单详细信息
         getmucislist(){
+             this.$store.commit('SETSONGLIST',[])
             this.$axios.get(`/api/playlist/detail`,{id:this.musicid}).then(res=>{
                 console.log(res.data)
                 this.musiclist = res.data
                 this.$store.commit('SETSONGLIST',res.data.playlist.tracks )
                 this.showimg = true
+               
             })
         },
-        //获取不同信息
-        getidfmessage(){
+        //获取单个排行所有信息
+        getrankdetail(){
+      this.$store.state.ranklist.forEach(el=>{
+          if(el.playlist.id == this.musicid){
+              this.musiclist = el
+                 this.showimg = true
+          }
+      })
+         console.log(this.musiclist,this.musicid)
+        },
+     getidfmessage(){
             switch(this.name){
                 case 'musiclist':
                 this.getmucislist();
                 break;
+                case 'ranklist':
+                this.getrankdetail();
+                break;
                 default:
                 break;
             }
-
         }
-    },
-    created(){
-        this.musicid = this.$route.params.id
-        this.name = this.$route.name
-        this.historypath = this.$route.matched[0].path
-        this.meta = this.$route.meta
-        this.getidfmessage()
-        console.log(this.$route)
-        this.$nextTick(()=>{
-            this._scrollcon()
-        })
-        
+        },
+        //获取不同信息
+    
     }
-}
+  
+
+
 </script>
 <style scoped lang = 'scss'>
    .headertitle{

@@ -1,7 +1,7 @@
 // 歌手页面
 // 排行组件
 <template>
-    <div>
+    <div >
         <h3>歌手排行页面</h3>
     </div>
 </template>

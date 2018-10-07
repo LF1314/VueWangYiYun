@@ -19,6 +19,9 @@
    </div>
     <router-view/>
     <div class="musicplay">
+         <div>
+              
+         </div>
          <music-play></music-play>
     </div>
   </div>
@@ -30,7 +33,13 @@ export default {
   name: 'App',
   components:{
     musicPlay:musicplay
+  },
+  data(){
+    return {
+      showplayer:false
+    }
   }
+
 
 }
 </script>
@@ -74,9 +83,9 @@ export default {
   //音乐播放组件
   .musicplay{
     position: fixed;
+    
     bottom: 0;
     left: 0;
-    height: 56px;
     width: 100%;
     z-index: 1000;
     background-color: #fff;
