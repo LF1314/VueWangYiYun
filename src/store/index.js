@@ -9,7 +9,9 @@ const state = {
     // 当前播放音乐的信息
     plaingsong:{},
     //存取排行所有信息
-    ranklist:[]
+    ranklist:[],
+    //存储当前播放mvli列表
+    mvlist:[]
 }
 
 const store = new vuex.Store({
@@ -27,6 +29,9 @@ const store = new vuex.Store({
       ,
       'SETRANKLIST'(state,uploade){
         state.ranklist = uploade
+      },
+      'SETMVLIST'(state,uploade){
+          state.mvlist = uploade
       }
     },
     plugins: [

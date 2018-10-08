@@ -129,10 +129,12 @@ export default {
         },
         //获取单个排行所有信息
         getrankdetail(){
+          this.$store.commit('SETSONGLIST',[])
       this.$store.state.ranklist.forEach(el=>{
           if(el.playlist.id == this.musicid){
               this.musiclist = el
-                 this.showimg = true
+               this.$store.commit('SETSONGLIST',el.playlist.tracks )
+               this.showimg = true
           }
       })
          console.log(this.musiclist,this.musicid)

@@ -7,7 +7,7 @@
           :list='songs'
           :music="musics"
           repeat-all
-          :play = 'playsic'
+    
           list-max-height= '300px'
 />
 <span>{{songlist}}</span>
@@ -30,11 +30,7 @@ export default {
 
         }
     },
-    methods:{
-       playsic(eve){
-           console.log(eve)
-       }
-    },
+ 
     created(){
         if(this.$store.state.musiclist[0]){
             this.songs = this.$store.state.musiclist
@@ -88,9 +84,6 @@ export default {
                 getsrc()
             
             }
-           
-         
-     
                     }
 
 

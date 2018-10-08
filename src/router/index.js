@@ -45,7 +45,37 @@ export default new Router({
       path:"/singer",
       name:'singer',
       component:()=>import ('@/components/singer/singer')
+    },
+    {
+      // 歌手详情页面
+      path:'/singer/:id',
+      name:'singerdetail',
+      redirect:'/singer/artists/:id',
+      component:()=>import ('@/components/singerdetail/singerdetail'),
+      children:[
+        {
+          path:'/singer/artists/:id',
+          name:"artists",
+          component:()=>import ('@/components/artists/artists')
+        },
+        {
+          path:'album',
+          name:'album',
+          component:()=>import('@/components/album/album')
+        },
+        {
+          path:'mvlist',
+          name:'mvlist',
+          component:()=>import('@/components/mvlist/mvlist')
+        }
+      ]
+    },
+   //播发mv页面
+   {
+     path:'/playmv/:id',
+     name:'playmv',
+     component:()=>import('@/components/playmvs/playmvs')
+   }
 
-    }
   ]
 })

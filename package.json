@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "better-scroll": "^1.13.2",
+    "dplayer": "^1.25.0",
     "hls.js": "^0.11.0",
     "node-sass": "^4.9.3",
     "sass": "^1.14.1",
