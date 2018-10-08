@@ -93,7 +93,7 @@
               if(this.$route.params.id){
           this.showmuscilist = true
       }
-            if(this.$store.state.ranklist[0].playlist.id)
+            if(this.$store.state.ranklist[0])
             {
        
                 this.ranklist = this.$store.state.ranklist

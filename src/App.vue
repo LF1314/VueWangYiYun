@@ -87,7 +87,7 @@ export default {
     bottom: 0;
     left: 0;
     width: 100%;
-    z-index: 990;
+    z-index: 1000;
     background-color: #fff;
   }
 </style>
