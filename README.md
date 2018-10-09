@@ -2,6 +2,8 @@
 
 [网易云api](https://binaryify.github.io/NeteaseCloudMusicApi/#/?id=neteasecloudmusicapi)
 
+[Muse-UI](https://muse-ui.org/#/zh-CN)
+
 ## Build Setup
 
 ``` bash
