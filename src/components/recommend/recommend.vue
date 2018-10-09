@@ -7,11 +7,12 @@
         <div class="content">
             <div class="op">
                 <div class="bannerwraper">
-                    <swiper :options="swiperOption" ref="mySwiper" class="cler">
-                        <swiper-slide v-for="(banner,index) in banners" :key ='index'>
-                        <img :src="banner.picUrl" alt="" width="100%">
-                        </swiper-slide>
-                    </swiper>
+                    <mu-carousel hide-controls >
+                        <mu-carousel-item v-for="(banner,index) in banners" :key ='index'>
+                            <img :src="banner.picUrl" alt="" width="100%">
+                        </mu-carousel-item>
+                       
+                    </mu-carousel>
                 </div> 
         
             </div> 
@@ -44,7 +45,7 @@
                        <ul>
                            <li class="newitem" v-for="(item , index) in newsong" :key="index">
                               <div class="newicon">
-                               <img v-show="item.song" :src="item.song.album.blurPicUrl" alt="" width="100%" height="100%">
+                               <img v-show="item.song" :src="item.song.album.blurPicUrl" alt="" width="100%">
                               </div>
                               <p class="newavatrt">{{item.name}}</p>
                               <p class="newdesc"><span v-show="item.song" v-for="(art,index) in item.song.album.artists" :key="index">{{art.name}}</span></p>
@@ -76,27 +77,6 @@ export default {
            banners:[],
            recommsings:[],
            newsong:[],
-         swiperOption: {//以下配置不懂的，可以去swiper官网看api，链接http://www.swiper.com.cn/api/
-          // notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，<br>　　　　　　　　假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
-          // swiper configs 所有的配置同swiper官方api配置
-        loop: true,
-          speed: 400,
-          direction: 'horizontal',
-          paginationClickable: true,
-          mousewheelControl: true,
-          autoplay: true,
-          //autoplay: true,
-          autoplayDisableOnInteraction: false,
-          observer: true,
-          observeParents: true,
-          debugger: true,
-           pagination: {
-            el: '.swiper-pagination',
-            // dynamicBullets: true,
-           }
-          // 如果自行设计了插件，那么插件的一些配置相关参数，也应该出现在这个对象中，如下debugger
-         
-        }
        }
    },
    watch:{
@@ -178,7 +158,9 @@ export default {
 .bannerwraper{
     padding: 0 10px;
      background-color: #D44439;
- 
+    .mu-carousel{
+        height: 195px;;
+    }
     img{
          height: 100%;
          border-radius: 3px;

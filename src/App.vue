@@ -83,7 +83,6 @@ export default {
   //音乐播放组件
   .musicplay{
     position: fixed;
-    
     bottom: 0;
     left: 0;
     width: 100%;
