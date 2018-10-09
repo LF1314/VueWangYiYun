@@ -2,6 +2,8 @@
 
 [网易云api](https://binaryify.github.io/NeteaseCloudMusicApi/#/?id=neteasecloudmusicapi)
 
+[Muse-UI](https://muse-ui.org/#/zh-CN)
+
 ## Build Setup
 
 ``` bash
@@ -53,4 +55,4 @@ playsong
 ![](https://user-gold-cdn.xitu.io/2018/10/9/166560e61ce07f48?w=378&h=590&f=png&s=149570)
 
 
-其他功能有时间在完善
+
