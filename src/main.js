@@ -5,14 +5,15 @@ import App from './App'
 import router from './router'
 import xhr from '../axios/index'
 import store from './store'
-import MuseUI from 'muse-ui';
-import 'muse-ui/dist/muse-ui.css';
+import MuseUI from 'muse-ui'
+import 'muse-ui/dist/muse-ui.css'
+
 Vue.use(MuseUI)
 Vue.config.productionTip = false
 Vue.prototype.$axios = xhr
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
+  el: '#app', 
   store,
   router,
   components: { App },

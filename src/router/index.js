@@ -6,6 +6,21 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    //登录页面路由
+
+    {
+      path:'/login',
+      name:'login',
+       component:()=>import ('@/components/login/login')  
+    }
+    ,
+    //用户界面
+    {
+      path:'/person',
+      name:'person',
+      component:()=>import ('@/components/person/personcenter')
+    }
+    ,
     {
       path: '/',
      redirect:'/recommend'

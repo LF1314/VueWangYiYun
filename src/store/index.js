@@ -11,7 +11,9 @@ const state = {
     //存取排行所有信息
     ranklist:[],
     //存储当前播放mvli列表
-    mvlist:[]
+    mvlist:[],
+    userinfo:{},
+    userdetail:{}
 }
 
 const store = new vuex.Store({
@@ -32,7 +34,14 @@ const store = new vuex.Store({
       },
       'SETMVLIST'(state,uploade){
           state.mvlist = uploade
-      }
+      },
+      'SETUSERINFO'(state,uploade){
+         state.userinfo = uploade
+      },
+    //   存取用户详细信息
+     'SETUSEDETAIL'(state,uploade){
+         state.userdetail = uploade
+     }
     },
     plugins: [
         createPersistedState({
