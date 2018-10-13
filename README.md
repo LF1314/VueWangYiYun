@@ -25,7 +25,8 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 recommend
 
-![](https://user-gold-cdn.xitu.io/2018/10/9/166560a067f43265?w=369&h=787&f=png&s=316996)
+
+![](https://user-gold-cdn.xitu.io/2018/10/13/1666d28b95f80f40?w=371&h=800&f=png&s=271789)
 
 rank
 
@@ -54,5 +55,24 @@ playsong
 
 ![](https://user-gold-cdn.xitu.io/2018/10/9/166560e61ce07f48?w=378&h=590&f=png&s=149570)
 
+personplaymusic
 
 
+![](https://user-gold-cdn.xitu.io/2018/10/13/1666d264e0c42d52?w=373&h=796&f=png&s=210542)
+
+![](https://user-gold-cdn.xitu.io/2018/10/13/1666d270abf428fc?w=367&h=795&f=png&s=122590)
+
+personcenter
+
+
+![](https://user-gold-cdn.xitu.io/2018/10/13/1666d27ae41cccbb?w=369&h=763&f=png&s=110743)
+
+login
+
+![](https://user-gold-cdn.xitu.io/2018/10/13/1666d2a3bb61d4fb?w=366&h=731&f=png&s=25420)
+
+personmusiclist
+
+![](https://user-gold-cdn.xitu.io/2018/10/13/1666d2b89722be58?w=372&h=802&f=png&s=163818)
+
+其他功能有时间在完善
