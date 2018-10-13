@@ -13,12 +13,18 @@ const state = {
     //存储当前播放mvli列表
     mvlist:[],
     userinfo:{},
-    userdetail:{}
+    userdetail:{},
+    //存储个人的音乐列表
+    personmusiclist:{}
 }
 
 const store = new vuex.Store({
     state,
     mutations:{
+    'SETPERSONMUSICLIST'(state,uploade){
+          state.personmusiclist = uploade
+    },
+
       'SETSONGLIST'(state,uploade){
           state.songlist = uploade
       }  ,

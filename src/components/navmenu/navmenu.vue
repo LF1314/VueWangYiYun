@@ -43,6 +43,7 @@ export default
             let uid = this.$store.state.userinfo.userId
             this.$axios.get('/api/user/detail',{uid}).then(res=>{
                 console.log(res)
+                this.$store.commit('SETUSEDETAIL',res.data)
                 this.leav = res.data.level
                 this.listensng = res.data.listenSongs
             })
@@ -54,8 +55,12 @@ export default
         }
     },
     created(){
-        if(this.$store.state.userinfo.avatarUrl){
+        if(!this.$store.state.userdetail.level){
          this.getuserdetail()
+        }
+        else{
+           this.leav = this.$store.state.userdetail.level
+           this.listensng = this.$store.state.userdetail.listenSongs
         }
        
     }

@@ -4,7 +4,6 @@
    <div class="wraper">
       <div class="headertitle">
        <mu-appbar style="width: 100%;" color="#D44439" 
-      
        >
           <mu-button icon slot="left" @click="changeshownav">
             <mu-icon value="mu"></mu-icon>
@@ -85,7 +84,7 @@ export default {
       dd.style.height = '100px'
     },
     jumptoperson(){
-      this.$router.push('/person')
+      this.$router.push('/person/songlist')
     },
     //退出登录
     logout(){
@@ -125,7 +124,7 @@ export default {
   z-index: 1002;
 }
  .personavatart{
-   margin-top: 4px;
+   margin-top: 8px;
    height: 44px;
    width: 44px;
    float: right;
@@ -160,6 +159,9 @@ export default {
     text-align: center;
     background-color: #D44439;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3) ;
+    .mu-appbar-title ,.mu-icon-button{
+      font-size: 15px;
+    }
     .mu-appbar{
       height: 46px;
         color: #fff;

@@ -6,6 +6,14 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    //测试页面
+
+
+    {
+      path:'/test',
+      name:'test',
+      component:()=>import ('@/components/musiccomponents/playmusic')
+    },
     //登录页面路由
 
     {
@@ -18,7 +26,36 @@ export default new Router({
     {
       path:'/person',
       name:'person',
-      component:()=>import ('@/components/person/personcenter')
+      redirect:'songlist',
+      component:()=>import ('@/components/person/personcenter'),
+      children:[
+        //个人中心歌单列表
+        {
+          path:'songlist',
+          name:'songlist',
+          component:()=>import ('@/components/person/perlist'),
+          children:[
+            //播放歌单单曲
+            {
+              path:':id',
+              name:'playmysong',
+              component:()=>import('@/components/person/listensong')
+            }
+          ]
+          
+        }
+        ,
+        {
+          path:'collect',
+          name:'collect',
+          component:()=>import ('@/components/person/collect')
+        },
+        {
+          path:'aboutme',
+          name:'aboutme',
+          component:()=>import ('@/components/person/aboutme')
+        }
+      ]
     }
     ,
     {
