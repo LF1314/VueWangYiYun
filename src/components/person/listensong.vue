@@ -4,7 +4,7 @@
     <div class="person_listen_wraper" :class="show ? 'active' : 'now'">
          
            <div class="bgdiv">
-              <img :src="$store.state.personmusiclist.coverImgUrl" width="100%" height="99%" alt="">
+              <img v-if="playingsong.al" :src="playingsong.al.picUrl" width="100%" height="99%" alt="">
            </div>
           <div class="listen_inner">
               <div class="listen_header" >
@@ -67,6 +67,7 @@ export default
         console.log(this.fistid)
         this.$store.state.personmusiclist.tracks.forEach((currentItem,index) => {
             if(this.fistid == currentItem.id){
+                this.bgimgurl = currentItem.al.picUrl
                 this.playingsong = currentItem
                 this.songindex = index
             }

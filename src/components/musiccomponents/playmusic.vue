@@ -110,7 +110,7 @@ export default{
                 this.$emit('changsong',this.songindexs)
                let songid = this.songlist[this.songindexs].id
                  this.$axios.get('/api/music/url',{id:songid}).then(res=>{
-                 console.log(res.data.data[0].url)
+                //  console.log(res.data.data[0].url)
                 
                  audio.src = res.data.data[0].url       
              })
