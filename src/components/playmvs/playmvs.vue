@@ -37,8 +37,8 @@
 </template>
 <script>
 import Bscroll from 'better-scroll'
-import 'DPlayer/dist/DPlayer.min.css';
-import DPlayer from 'DPlayer';
+import 'dplayer/dist/DPlayer.min.css';
+import DPlayer from 'dplayer';
     export default{
         name:'playmvs',
         data(){
